@@ -2,8 +2,9 @@ package com.cts.eaution.integration.kafka;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class KafkaEventListener {
 	
 	@KafkaListener(id = "bidconsumer", topics = "bidtopic1")
