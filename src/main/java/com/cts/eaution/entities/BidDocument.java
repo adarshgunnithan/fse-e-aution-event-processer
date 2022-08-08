@@ -4,12 +4,16 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document
 public class BidDocument  implements Serializable{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8187576789804101123L;
+	@Id
 	private Long bidId;
 	private BigDecimal biddingAmount;
 	private Long productId;
@@ -69,4 +73,5 @@ public class BidDocument  implements Serializable{
 	public void setIsBidActive(Boolean isBidActive) {
 		this.isBidActive = isBidActive;
 	}
+	
 }
