@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.Date;
 
 
+/**
+ * @author aadi
+ *User object for no sql db
+ */
 public class UserDocument  implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -3454905156300037102L;
+	
 	private Long id;
 	private String email;
 	private String role;

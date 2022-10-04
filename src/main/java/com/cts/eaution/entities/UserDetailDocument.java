@@ -2,14 +2,16 @@ package com.cts.eaution.entities;
 
 import java.io.Serializable;
 
+/**
+ * @author aadi
+ *UserDetailDocument 
+ */
 public class UserDetailDocument implements Serializable{
 	public UserDetailDocument() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -5340141745534799192L;
 	
 	private Long userDetailId;

@@ -6,7 +6,11 @@ import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document
+/**
+ * @author aadi
+ *No sql bid object
+ */
+@Document(collection = "bids")
 public class BidDocument  implements Serializable{
 	
 	/**

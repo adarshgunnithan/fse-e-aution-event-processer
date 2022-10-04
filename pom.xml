@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.fse.eaution</groupId>
 		<artifactId>fse-e-aution-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fse.eaution</groupId>
 	<artifactId>fse-e-aution-event-processer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>fse-e-aution-event-processer</name>
 	<description>service registry</description>
+	
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
 	<dependencies>
+		<dependency>
+		<groupId>com.fse.eaution</groupId>
+	<artifactId>fse-e-aution-common</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-<dependency>
+			</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -30,72 +35,66 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-				<dependency>
-  			<groupId>org.springframework.kafka</groupId>
- 			 <artifactId>spring-kafka</artifactId>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
 		</dependency>
-			<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-      <version>3.1.3</version>
-      
-</dependency>
-
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>${org.springframework.cloud.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
 		</dependency>
-		
-		<!-- Querydsl -->
-		
-		 <dependency>
-        <groupId>com.mysema.querydsl</groupId>
-        <artifactId>querydsl-core</artifactId>
-        <version>3.6.3</version>
-    </dependency>
-    <dependency>
-        <groupId>com.mysema.querydsl</groupId>
-        <artifactId>querydsl-apt</artifactId>
-        <version>3.6.3</version>
-    </dependency>    
-    <dependency>
-        <groupId>com.mysema.querydsl</groupId>
-        <artifactId>querydsl-jpa</artifactId>
-        <version>3.6.3</version>
-    </dependency>
-    <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-mongodb</artifactId>
-</dependency>
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-core</artifactId>
+			<version>${com.mysema.querydsl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${com.mysema.querydsl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${com.mysema.querydsl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-		 <plugin>
-            <groupId>com.mysema.maven</groupId>
-            <artifactId>apt-maven-plugin</artifactId>
-            <version>1.1.3</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>process</goal>
-                    </goals>
-                    <configuration><outputDirectory>${project.build.directory}/generated-sources/java</outputDirectory>
-                        <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.1.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/generated-sources/java</outputDirectory>
+							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

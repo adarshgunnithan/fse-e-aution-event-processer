@@ -4,6 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+/**
+ * @author aadi
+ *Root of event processer application
+ */
 @SpringBootApplication
 @EnableMongoRepositories
 public class FseEAutionEventProcesserApplication {
