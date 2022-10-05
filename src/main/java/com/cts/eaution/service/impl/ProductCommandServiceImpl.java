@@ -22,6 +22,8 @@ public class ProductCommandServiceImpl implements ProductCommandService{
 	public ProductVO save(ProductVO productVO) {
 		ProductDocument productDocument = new ProductDocument();
 		BeanUtils.copyProperties(productVO, productDocument);
+		//productDocument.setCategory(productVO.getCategory().toString());
+		
 		ProductDocument savedDocument = productDocumentDao.save(productDocument);
 		ProductVO returnVO = new ProductVO();
 		BeanUtils.copyProperties(savedDocument, returnVO);
