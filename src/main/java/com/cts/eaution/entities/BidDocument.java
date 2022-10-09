@@ -21,7 +21,7 @@ public class BidDocument  implements Serializable{
 	private Long bidId;
 	private BigDecimal biddingAmount;
 	private Long productId;
-	private UserDocument user;
+	private String buyerEmailID;
 	private Date bidCreatedDate;
 	private Boolean isBidActive;
 
@@ -54,12 +54,14 @@ public class BidDocument  implements Serializable{
 		this.productId = productId;
 	}
 
-	public UserDocument getUser() {
-		return user;
+	
+
+	public String getBuyerEmailID() {
+		return buyerEmailID;
 	}
 
-	public void setUser(UserDocument user) {
-		this.user = user;
+	public void setBuyerEmailID(String buyerEmailID) {
+		this.buyerEmailID = buyerEmailID;
 	}
 
 	public Date getBidCreatedDate() {
